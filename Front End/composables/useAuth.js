@@ -21,8 +21,13 @@ export function useAuth() {
       authStore.setUser(res.user);
       authStore.setToken(res.token);
 
-      // Redirect to home or dashboard
-      router.push("/");
+      // Redirect based on user role
+      if (res.user.role === "admin") {
+        router.push("/admin/dashboard");
+      } else {
+        router.push("/");
+      }
+
       return true;
     } catch (error) {
       authStore.setError(error.message || "Failed to login");

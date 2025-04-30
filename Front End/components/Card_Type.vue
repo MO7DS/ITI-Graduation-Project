@@ -36,7 +36,7 @@ const handleCardClick = () => {
             bg-[#ECDCBF] text-red-900 cursor-pointer p-[5.817px_17.45px] 
             md:p-[8px_22px] rounded-[11.633px] group-hover:text-[#ECDCBF] group-hover:bg-red-900
             transition-all duration-500 group-hover:rounded-[40px]
-            lg:text-[18px] font-bold leading-[150%] lg:tracking-[-0.304px] tracking-[-0.276px] text-[14.542px]"
+            lg:text-xl font-bold leading-[150%] lg:tracking-[-0.304px] tracking-[-0.276px] text-lg"
       >
         {{catigory}}
       </button>

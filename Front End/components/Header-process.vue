@@ -13,7 +13,7 @@
       to="/order/ongoing-order"
       :class="[
     baseClasses,
-    (route.path === '/order/ongoing-order' || route.path === '/order/order-in-review' || route.path === '/order/previous-order') ? activeClasses : ''
+    route.path.startsWith('/order') ? activeClasses : ''
   ]"
     >
       Orders
@@ -23,11 +23,7 @@
       to="/security/changePassword"
       :class="[
     baseClasses,
-    (route.path === '/security/changePassword' ||
-     route.path === '/security/newPassword' ||
-     route.path === '/security/successfullPassword')
-      ? activeClasses
-      : ''
+    route.path.startsWith('/security') ? activeClasses : ''
   ]"
     >
       Security

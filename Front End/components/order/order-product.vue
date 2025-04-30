@@ -33,11 +33,11 @@
     <!-- Quantity & Total Price -->
     <div class="flex flex-col gap-2 w-[45%]">
       <div class="flex lg:flex-row flex-col justify-between items-center w-full">
-        <p class="text-red-800 lg:text-xl text-sm font-extrabold">Quantity</p>
+        <p class="text-red-800 lg:text-xl text-sm font-bold">Quantity</p>
         <p class="text-black text-sm font-semibold">{{ quantity }}</p>
       </div>
       <div class="flex lg:flex-row flex-col justify-between items-center w-full">
-        <p class="text-red-800 lg:text-2xl text-sm font-extrabold font-['Poppins']">
+        <p class="text-red-800 lg:text-xl text-sm font-bold ">
           Total Price
         </p>
         <p class="text-black text-sm font-semibold text-right">

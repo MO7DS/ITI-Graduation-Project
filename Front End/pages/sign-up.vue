@@ -10,19 +10,8 @@
     <!-- Right side - Form -->
     <div class="h-screen flex items-center justify-center w-full">
       <div
-        class="lg:w-[555px] w-full inline-flex flex-col lg:justify-start justify-center items-start lg:px-0 px-4 gap-14"
+        class="lg:w-[555px] w-full inline-flex flex-col lg:justify-start justify-center items-start lg:mt-0 mt-32 lg:px-0 px-4 gap-14"
       >
-        <!-- <div class="w-full flex justify-start items-center">
-          <div
-            class="px-6 border-l-[6px] border-red-800 flex justify-center items-center"
-          >
-            <p
-              class="text-red-800 lg:text-3xl text-2xl font-bold leading-loose lg:leading-[48px]"
-            >
-              Sign up
-            </p>
-          </div>
-        </div> -->
 
         <SectionTitle title="Sign up"/>
 
@@ -32,7 +21,7 @@
         >
           <!-- Name & Username -->
           <div
-            class="lg:inline-flex lg:flex-row flex-col justify-between items-center w-full lg:gap-4 gap-2"
+            class="lg:inline-flex lg:flex-row flex-col justify-between items-start w-full lg:gap-4 gap-2 h-10%"
           >
             <!-- Name -->
             <div

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-4 lg:w-full w-93">
+  <div class="flex lg:gap-4 gap-2 lg:w-full w-88">
     <div class="flex lg:gap-4 gap-2 w-full">
       <!-- product details -->
       <ProductData :item="item" />

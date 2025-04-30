@@ -16,3 +16,17 @@
     font-family: Poppins;
     
   }
+
+  @keyframes scroll-x {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .auto-scroll {
+    animation: scroll-x 15s linear infinite;
+  }
+  

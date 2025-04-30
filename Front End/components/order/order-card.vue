@@ -33,19 +33,19 @@ defineProps({
             </div>
             <div class="flex justify-between items-center w-full">
               <p
-                class="text-neutral-800 group-hover:text-yellow-50 lg:text-lg text-xs lg:font-semibold font-bold font-['Poppins']"
+                class="text-neutral-800 group-hover:text-yellow-50 lg:text-lg text-xs lg:font-semibold font-bold"
               >
                 Quantity
               </p>
               <p
-                class="text-neutral-800 group-hover:text-yellow-50 lg:text-lg text-xs lg:font-semibold font-bold font-['Poppins']"
+                class="text-neutral-800 group-hover:text-yellow-50 lg:text-lg text-xs lg:font-semibold font-bold "
               >
                 {{ quantity }} items
               </p>
             </div>
             <div class="flex justify-between items-center w-full">
               <p
-                class="text-neutral-800 group-hover:text-yellow-50 lg:text-lg text-xs lg:font-semibold font-bold font-['Poppins']"
+                class="text-neutral-800 group-hover:text-yellow-50 lg:text-lg text-xs lg:font-semibold font-bold "
               >
                 Order Date
               </p>
@@ -57,10 +57,10 @@ defineProps({
             </div>
           </div>
           <div class="flex justify-between items-center w-full">
-            <p class="text-red-800 lg:text-lg text-xs lg:font-semibold font-bold font-['Poppins']">
+            <p class="text-red-800 lg:text-lg text-xs lg:font-semibold font-bold">
               Total Price
             </p>
-            <p class="text-red-800 lg:text-lg text-xs lg:font-semibold font-bold font-['Poppins']">
+            <p class="text-red-800 lg:text-lg text-xs lg:font-semibold font-bold">
               {{ price }} EGP
             </p>
           </div>

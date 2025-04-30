@@ -19,7 +19,7 @@ const increment = () => {
 </script>
 
 <template>
-  <div class="flex gap-4 lg:w-full w-93">
+  <div class="flex lg:gap-4 gap-1 lg:w-full w-86">
     <div class="flex lg:gap-4 gap-2 w-full">
       <!-- product details -->
       <slot />

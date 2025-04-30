@@ -52,7 +52,7 @@ onMounted(async () => {
           v-for="category in categories"
           :key="category.name"
           :to="`/market-products?category=${encodeURIComponent(category.name)}`"
-          class="text-center h-10 justify-start text-red-100 lg:text-base text-sm font-medium flex  hover:px-20 lg:py-2 py-1 gap-4 hover:bg-orange-200 hover:w-full hover:text-red-800 hover:rounded-[32px] transition-all duration-300 cursor-pointer font-['Poppins']"
+          class="text-center h-10 justify-start text-red-100 lg:text-base text-sm font-medium flex  hover:px-4 lg:py-2 py-1 gap-4 hover:bg-orange-200 hover:w-full hover:text-red-800 hover:rounded-[32px] transition-all duration-300 cursor-pointer font-['Poppins']"
         >
           {{ category.name }}
         </NuxtLink>
@@ -67,7 +67,7 @@ onMounted(async () => {
       </div>
       <div class=" flex-col lg:px-6 px-4 inline-flex justify-start items-start lg:gap-0 gap-1">
         <div
-          class=" lg:h-10 h-6 inline-flex justify-start items-start gap-4 group hover:px-20 lg:py-2 py-1 hover:bg-orange-200 hover:rounded-[32px] transition-all duration-300 cursor-pointer"
+          class=" lg:h-10 h-6 inline-flex justify-start items-start gap-4 group hover:px-4 lg:py-2 py-1 hover:bg-orange-200 hover:rounded-[32px] transition-all duration-300 cursor-pointer"
         >
           <div class="relative w-6 flex items-center justify-center">
             <i
@@ -80,7 +80,7 @@ onMounted(async () => {
         </div>
 
         <div
-          class="lg:h-10 h-6 inline-flex justify-start items-start gap-4 group hover:px-20 lg:py-2 py-1 hover:bg-orange-200 hover:rounded-[32px] transition-all duration-300 cursor-pointer"
+          class="lg:h-10 h-6 inline-flex justify-start items-start gap-4 group hover:px-4 lg:py-2 py-1 hover:bg-orange-200 hover:rounded-[32px] transition-all duration-300 cursor-pointer"
         >
           <div class="relative w-6 flex items-center justify-center">
             <i
@@ -93,7 +93,7 @@ onMounted(async () => {
         </div>
 
         <div
-          class="lg:h-10 h-6 inline-flex justify-start items-start gap-4 group hover:px-20 lg:py-2 py-1 hover:bg-orange-200 hover:rounded-[32px] transition-all duration-300 cursor-pointer"
+          class="lg:h-10 h-6 inline-flex justify-start items-start gap-4 group hover:px-4 lg:py-2 py-1 hover:bg-orange-200 hover:rounded-[32px] transition-all duration-300 cursor-pointer"
         >
           <div class="relative w-6 flex items-center justify-center">
             <i
@@ -106,7 +106,7 @@ onMounted(async () => {
         </div>
 
         <div
-          class="lg:h-10 h-6 inline-flex justify-start items-start gap-4 group hover:px-20 lg:py-2 py-1 hover:bg-orange-200 hover:rounded-[32px] transition-all duration-300 cursor-pointer"
+          class="lg:h-10 h-6 inline-flex justify-start items-start gap-4 group hover:px-4 lg:py-2 py-1 hover:bg-orange-200 hover:rounded-[32px] transition-all duration-300 cursor-pointer"
         >
           <div class="relative w-6 flex items-center justify-center">
             <i

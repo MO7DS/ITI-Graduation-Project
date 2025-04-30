@@ -1,3 +1,101 @@
+<script setup>
+definePageMeta({
+  layout: 'auth',
+});
+
+import { z } from 'zod';
+import { useAuth } from '../composables/useAuth';
+import { useAuthMiddleware } from '../composables/useAuthMiddleware';
+
+const { login, loading, error: authError } = useAuth();
+const { guestOnly } = useAuthMiddleware();
+
+// Redirects authenticated users away from the login page
+onMounted(() => {
+  guestOnly();
+});
+
+// Reactive variables to store form inputs
+const email = ref('');
+const password = ref('');
+const errors = ref({});
+const validationStatus = ref({
+  email: false,
+  password: false
+});
+const showPassword = ref(false);
+
+// Schema validation using zod
+const loginSchema = z.object({
+  email: z.string()
+  .email('Please enter a valid email address')
+    .min(5, 'Email must be at least 5 characters')
+    .max(50, 'Email must be at most 50 characters'),
+
+  password: z.string()
+    .min(8, 'Password must be at least 8 characters')
+    .max(20, 'Password must be at most 20 characters')
+    .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
+    .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
+    .regex(/[0-9]/, 'Password must contain at least one number')
+    .regex(/[@$!%*?&#]/, 'Password must contain at least one special character (@, $, !, %, *, ?, &, #)')
+});
+
+// Validates a specific field on blur
+const validateField = (field) => {
+  try {
+    loginSchema.pick({ [field]: true }).parse({ [field]: eval(field).value });
+    errors.value[field] = null;
+    validationStatus.value[field] = true;
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      errors.value[field] = error.errors[0].message;
+      validationStatus.value[field] = true;
+    }
+  }
+};
+
+// Clears validation error on focus
+const clearValidation = (field) => {
+  errors.value[field] = null;
+  validationStatus.value[field] = false;
+};
+
+// Handles form submission
+const handleSubmit = async () => {
+  errors.value = {}; // Reset errors before validation
+
+  try {
+    // Validate form data
+    const validatedData = loginSchema.parse({
+      email: email.value,
+      password: password.value
+    });
+
+    // Call the login function from useAuth composable
+    await login({
+      email: validatedData.email,
+      password: validatedData.password
+    });
+
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      error.errors.forEach((err) => {
+        errors.value[err.path[0]] = err.message;
+      });
+    }
+  }
+};
+
+// Computes if the form is valid based on validation status
+const isFormValid = computed(() => {
+  return validationStatus.value.email && validationStatus.value.password;
+});
+
+
+</script>
+
+
 <template>
   <div class="h-full flex items-center w-full">
     <!-- Left side - Background image (Visible only on large screens) -->
@@ -130,97 +228,4 @@
   </div>
 </template>
 
-<script setup>
-import { z } from 'zod';
-import { useAuth } from '../composables/useAuth';
-import { useAuthMiddleware } from '../composables/useAuthMiddleware';
 
-const { login, loading, error: authError } = useAuth();
-const { guestOnly } = useAuthMiddleware();
-
-// Redirects authenticated users away from the login page
-onMounted(() => {
-  guestOnly();
-});
-
-// Reactive variables to store form inputs
-const email = ref('');
-const password = ref('');
-const errors = ref({});
-const validationStatus = ref({
-  email: false,
-  password: false
-});
-const showPassword = ref(false);
-
-// Schema validation using zod
-const loginSchema = z.object({
-  email: z.string()
-  .email('Please enter a valid email address')
-    .min(5, 'Email must be at least 5 characters')
-    .max(50, 'Email must be at most 50 characters'),
-
-  password: z.string()
-    .min(8, 'Password must be at least 8 characters')
-    .max(20, 'Password must be at most 20 characters')
-    .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
-    .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
-    .regex(/[0-9]/, 'Password must contain at least one number')
-    .regex(/[@$!%*?&#]/, 'Password must contain at least one special character (@, $, !, %, *, ?, &, #)')
-});
-
-// Validates a specific field on blur
-const validateField = (field) => {
-  try {
-    loginSchema.pick({ [field]: true }).parse({ [field]: eval(field).value });
-    errors.value[field] = null;
-    validationStatus.value[field] = true;
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      errors.value[field] = error.errors[0].message;
-      validationStatus.value[field] = true;
-    }
-  }
-};
-
-// Clears validation error on focus
-const clearValidation = (field) => {
-  errors.value[field] = null;
-  validationStatus.value[field] = false;
-};
-
-// Handles form submission
-const handleSubmit = async () => {
-  errors.value = {}; // Reset errors before validation
-
-  try {
-    // Validate form data
-    const validatedData = loginSchema.parse({
-      email: email.value,
-      password: password.value
-    });
-
-    // Call the login function from useAuth composable
-    await login({
-      email: validatedData.email,
-      password: validatedData.password
-    });
-
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      error.errors.forEach((err) => {
-        errors.value[err.path[0]] = err.message;
-      });
-    }
-  }
-};
-
-// Computes if the form is valid based on validation status
-const isFormValid = computed(() => {
-  return validationStatus.value.email && validationStatus.value.password;
-});
-
-definePageMeta ({
-  layout : "auth",
-});
-</script>

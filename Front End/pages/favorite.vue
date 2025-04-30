@@ -59,13 +59,13 @@ const paginatedFavorites = computed(() => {
   <!-- Wishlist Section -->
   <div
     v-else
-    class="lg:mx-[130px] mx-[61px] mt-[40px] flex flex-col gap-[24px]"
+    class="lg:px-32 px-4 mt-[40px] flex flex-col gap-[24px]"
   >
     <div class="px-6 border-l-[6px] border-red-800">
       <p class="text-red-800 lg:text-3xl text-xl font-bold">Favorite</p>
     </div>
 
-    <div class="flex flex-wrap gap-4">
+    <div class="flex flex-wrap lg:gap-4 gap-1">
       <ProductCard
         v-for="product in paginatedFavorites"
         :key="product.id"

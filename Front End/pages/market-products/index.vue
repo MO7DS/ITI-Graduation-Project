@@ -45,22 +45,10 @@ const filtereddesignedProducts = computed(() => {
   });
 });
 
-// watchEffect(() => {
-//   console.log("Category Filter:", categoryParam.value);
-//   console.log("Filtered Products:", filtereddesignedProducts.value);
-// });
-
 const totalPages = computed(() => {
   if (!filtereddesignedProducts.value || filtereddesignedProducts.value.length === 0) return 1;
   return Math.ceil(filtereddesignedProducts.value.length / itemsPerPage);
 });
-
-// const paginatedDesignedProducts = computed(() => {
-//   if (!filtereddesignedProducts.value || filtereddesignedProducts.value.length === 0) return [];
-//   const start = (currentPage.value - 1) * itemsPerPage;
-//   const end = start + itemsPerPage;
-//   return filtereddesignedProducts.value.slice(start, end);
-// });
 
 // Format the category name for display
 const formattedCategory = computed(() => {
@@ -92,23 +80,14 @@ const formattedCategory = computed(() => {
 
     <!-- Display Paginated Products -->
     <div
-      class="flex flex-row lg:flex-wrap lg:justify-start justify-center flex-wrap gap-3"
+      class="flex flex-row lg:flex-wrap justify-start flex-wrap lg:gap-3 gap-1"
     >
       <div
         v-for="designproduct in paginatedDesignedProducts"
         :key="designproduct._id"
         class="flex"
       >
-        <!-- <ProductCard
-          :id="designproduct?.product._id"
-          :name="designproduct?.product.name"
-          :type="designproduct?.product.category"
-          :price="designproduct?.product.price"
-          :description="designproduct?.product.description"
-          :image="designproductproduct.image || product.thumbnail"
-          currency="EGP"
-        /> -->
-
+        
         <ProductCard
           :id="designproduct?._id"
           :title="designproduct?.title"

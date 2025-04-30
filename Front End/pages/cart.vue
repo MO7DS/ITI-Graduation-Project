@@ -30,7 +30,7 @@
 
     <div class="flex lg:flex-row flex-col gap-8 w-full md:flex-row">
       <div
-        class="flex flex-col lg:w-[650px] w-96 justify-start items-start lg:pb-0 pb-8 lg:border-none border-b-2 border-red-800"
+        class="flex flex-col lg:w-[650px] w-86 justify-start items-start lg:pb-0 pb-8 lg:border-none border-b-2 border-red-800"
       >
         <!-- Cart Items -->
         <CartItems

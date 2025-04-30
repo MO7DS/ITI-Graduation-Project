@@ -34,8 +34,9 @@ definePageMeta({
       class="lg:px-32 md:px-20 sm:px-8 px-4 lg:py-16 py-10 flex flex-col lg:gap-8 gap-4 lg:items-start"
     >
       <SectionTitle title="Featured Products" />
-      <div
-        class="flex lg:gap-6 items-start lg:justify-between overflow-x-auto lg:overflow-hidden gap-4 w-full"
+      <div class="w-full overflow-hidden">
+        <div
+        class="flex lg:gap-6 items-start lg:justify-between   whitespace-nowrap auto-scroll gap-4 w-full"
       >
         <HomeProduct
           name="Mystic Mug"
@@ -57,7 +58,14 @@ definePageMeta({
           description="Insulated sports water bottle"
           img="/home/bottel.png"
         />
+
+        <HomeProduct name="Mystic Mug" description="Ceramic heat-sensitive mug" img="/home/mug.png" />
+    <HomeProduct name="Bold Threads" description="Printed cotton T-shirt" img="/home/t-shirt.png" />
+    <HomeProduct name="Visionary Notebook" description="Premium leather-bound notebook" img="/home/book.png" />
+    <HomeProduct name="AquaFlow Bottle" description="Insulated sports water bottle" img="/home/bottel.png" />
       </div>
+      </div>
+      
     </div>
 
     <!-- how it works -->

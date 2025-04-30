@@ -60,12 +60,6 @@ const toggleFavorite = (e) => {
   const productId = props.id;
   wishlistStore.toggleWishlistItem(productId);
 
-  // if (isFavorite.value) {
-  //   wishlistStore.removeFromWishlist(props.id);
-  // } else {
-  //   const productId = props.id;
-  //   wishlistStore.toggleWishlistItem(productId);
-  // }
 };
 
 const addToCart = (e) => {
@@ -93,9 +87,9 @@ const removeFromCart = (e) => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center lg:gap-2 gap-1.5 group">
+  <div class="flex flex-col items-center justify-center lg:gap-2 gap-1.5 group mt-4">
     <div
-      class="relative lg:w-64 w-42 lg:h-64 h-40 lg:rounded-[42.35px] bg-[#D9D9D9] flex-shrink-0 aspect-square 
+      class="relative lg:w-64 w-40 lg:h-64 h-40 lg:rounded-[42.35px] bg-[#D9D9D9] flex-shrink-0 aspect-square 
          rounded-3xl"
     >
       <!-- Favorite Icon -->
@@ -134,7 +128,7 @@ const removeFromCart = (e) => {
       <img
         @click="navigateToProduct(id)"
         :src="image"
-        class="lg:w-64 w-42 lg:h-64 h-40 lg:rounded-[40px] rounded-[25.197px] "
+        class="lg:w-64 w-40 lg:h-64 h-40 lg:rounded-[40px] rounded-[25.197px] "
       />
 
       <!-- message notification -->
@@ -152,12 +146,12 @@ const removeFromCart = (e) => {
       <div class="flex flex-col  gap-0.5 justify-start items-start">
         <p
           @click="navigateToProduct(id)"
-          class="lg:text-xl lg:tracking-[-0.342px] font-bold leading-7 text-xs font-['Poppins'] cursor-pointer text-red-800 "
+          class="lg:text-xl font-bold text-lg  cursor-pointer text-red-900 line-clamp-1"
         >
           {{ title }}
         </p>
         <p
-          class="lg:text-sm text-[9.53px] text-black font-medium leading-[150%] lg:tracking-[-0.266px] tracking-[-0.191] "
+          class="lg:text-lg text-sm text-black font-medium line-clamp-2"
         >
           {{ description }}
         </p>
@@ -194,12 +188,6 @@ const removeFromCart = (e) => {
         </div>
       </div>
     </div>
-    <!-- <div
-      v-if="!isAuthenticated && showAddedMessage"
-      class="mt-4 p-2 bg-green-100 text-red-800 rounded-md text-center"
-    >
-      you need to login first!
-    </div> -->
   </div>
 </template>
 
